@@ -1,0 +1,131 @@
+%
+% Example file
+%
+
+\documentclass{mlse2019}           % for pLaTeX2e
+%\documentclass[english]{mlse} % for English papers
+%\documentclass[ascii]{mlse}   % for ASCII pTeX 
+
+\usepackage[dvipdfmx]{graphicx}
+%\usepackage{epsfig}
+
+\title{mlse2019.cls 使用サンプル}
+\etitle{An example of use for mlse.cls}
+\journalhead{An example of use for mlse.cls}
+\author{徳川 家康}{Ieyasu Tokugawa, 江戸幕府}
+\author{源 頼朝}{Minamotono Yoritomo, 鎌倉幕府}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{abstract}
+これは，{\tt mlse2019.cls}スタイルファイルを利用し，
+\LaTeX でフォーマットしたMLSEワークショップ用の論文サンプルです．
+本スタイルファイルは，FOSEの許可を得て，{\tt fose2017.cls}スタイルファイルを
+再利用しています．
+\begin{itemize}
+\item 論文本文が和文の場合，和文・英文のいずれかでアブストラクトを
+書いて下さい．両方併記することもできます．英文アブストラクトを書く
+場合は{\tt eabstract}環境(\verb|\begin{eabstract}?\end{eabstract}|)を
+使って下さい．
+\item 本文が英文の場合は，{\verb|\documentclass[english]{mlse2019}|}コマンドを利用して下さい．
+また，和文タイトル・和文著者名・和文アブストラクトを併記する必要はありません．
+\end{itemize}
+\end{abstract}
+
+\section{ワークショップの目的}
+
+近年の機械学習，あるいは深層学習（ディープラーニング）の発展に伴って，機
+械学習を利用するシステムは急速に社会に浸透しつつある．しかしその一方で，
+従来型のITシステムに用いられてきた様々なソフトウェア工学的手法は，
+機械学習を組み込んだシステム（機械学習システム）の前に全くと言っていいほど
+通用しなくなっている．
+機械学習システムの開発・テスト・運用の方法論は未だに確立できておらず，
+開発現場ではエンジニア達が試行錯誤で凌いでいるのが状況にある．
+このような現状を踏まえ，機械学習システムに対しては「機械学習工学」ともい
+うべき，新たなパラダイムの確立・体系化が必要であり，その議論のために
+本ワークショップを開催する．
+
+
+
+\section{ワークショップ開催概要}
+MLSE2019\cite{mlse2019}は以下の要領で開催予定です.
+\begin{description}
+\item[日程] 2019年7月6日（土）-- 7日（日）
+\item[場所] COLONY箱根\
+{\footnotesize
+   〒250--0631 神奈川県足柄下郡箱根町仙石原1246-845
+}
+\item[主催] 日本ソフトウェア科学会 機械学習工学研究会
+\end{description}
+
+\section{書式に関して}
+
+\subsection{ヘッダとフッタ}
+カバーページを除く奇数ページのヘッダには，英語論文タイトルが来ます．
+英語タイトルが長すぎたり，
+任意の位置で改行したい場合には\verb|\journalhead{The Title}|を利用して下さい．
+偶数ページのヘッダには「MLSE」が来ます．
+フッタは空となるように設定してください．
+
+\subsection{句読点と箇条書き}
+句読点は，英文に合わせて``，''と``．''とします．
+箇条書きは以下の要領とします．
+\begin{itemize}
+\item 項目1
+\item 項目2
+  \begin{itemize}
+  \item 項目2-1
+  \item 項目2-2
+  \end{itemize}
+\end{itemize}
+
+\begin{enumerate}
+\item 項目3 (項番付き)
+  \begin{enumerate}
+  \item 項目3-1 (項番付き)
+  \item 項目3-2 (項番付き)
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{表と図}
+
+表の例を表\ref{tab:example}に，
+図の例を図\ref{fig:example}に示します．
+表組みは，一番上の罫線を太くして，両端に縦の罫線を入れないものを標準スタイルとします．
+
+\begin{table}[htbp]
+  \centering
+  \caption{表の例} \label{tab:example}
+  \begin{tabular}{l|l|l}\hline\hline
+    MLSE2019 & 機械学習工学ワークショップ 2019 & 吉岡 信和，守田 憲司 編
+   \\ \hline
+    MLSE2020 & 機械学習工学ワークショップ 2020 & 編集担当 編 \\ \hline
+    MLSE2021 & 機械学習工学ワークショップ 2021 & 編集担当 編 \\ \hline
+  \end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{jssstlogo-blue.png}
+%  \includegraphics[width=\textwidth,scale=0.5]{att0of2b.eps}
+  \caption{図の例(JSSSTのロゴを使わせてもらっております)}
+  \label{fig:example}
+\end{figure}
+
+
+\acknowledgements{}
+本フォーマットを作成して頂いた方々に感謝します.
+FOSEのフォーマットの利用の許可を頂いたソフトウェア工学の基礎研究会に感謝します.
+%また, \LaTeX2e 用のフォーマットを作成して頂ける方がいらっしゃいましたら，プログラム委員長までご連絡ください. 
+
+%\bibliography{own,related,misc}
+\bibliographystyle{junsrt}
+
+\begin{thebibliography}{9}
+ \bibitem{mlse2019}吉岡 信和，守田 憲司 編: 機械学習工学ワークショップ 2019,
+         日本ソフトウェア科学会{\em MLSE2019},  2019.（to appear）
+\end{thebibliography}
+\end{document}
