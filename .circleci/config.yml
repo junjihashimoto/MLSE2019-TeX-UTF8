@@ -8,7 +8,10 @@ jobs:
       USER: root
     steps:
       - run: apt update -qq && apt install -y wget curl git sudo
+      - run: mkdir -p /etc/nix /nix
+      - run: echo "build-users-group =" > /etc/nix/nix.conf
       - run: curl https://nixos.org/nix/install | sh
+      - run: source ~/.nix-profile/etc/profile.d/nix.sh
       - checkout
       - run: nix-shell shell.nix --command 'exit 0'
 
