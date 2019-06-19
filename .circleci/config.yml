@@ -5,6 +5,7 @@ jobs:
     docker:
       - image: "nixos/nix"
     steps:
+      - nix-env -i git
       - checkout
       - run: nix-shell shell.nix --command 'exit 0'
 
