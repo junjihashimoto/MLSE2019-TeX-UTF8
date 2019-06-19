@@ -1,0 +1,16 @@
+version: 2
+
+jobs:
+  nix-shell:
+    docker:
+      - image: "ubuntu:18.04"
+    steps:
+      - run: curl https://nixos.org/nix/install | sh
+      - checkout
+      - run: nix-shell shell.nix --command 'exit 0'
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - "nix-shell"
