@@ -4,6 +4,8 @@ jobs:
   nix-shell:
     docker:
       - image: "ubuntu:18.04"
+    environment:
+      USER: root
     steps:
       - run: apt update -qq && apt install -y wget curl git
       - run: curl https://nixos.org/nix/install | sh
