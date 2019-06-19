@@ -7,7 +7,7 @@ jobs:
     environment:
       USER: root
     steps:
-      - run: apt update -qq && apt install -y wget curl git
+      - run: apt update -qq && apt install -y wget curl git sudo
       - run: curl https://nixos.org/nix/install | sh
       - checkout
       - run: nix-shell shell.nix --command 'exit 0'
