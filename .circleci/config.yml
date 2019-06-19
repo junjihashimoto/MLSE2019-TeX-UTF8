@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: "ubuntu:18.04"
     steps:
-      - run: apt update -qq && apt install -y make git texlive-lang-japanese
+      - run: apt update -qq && apt install -y make git texlive-lang-japanese latexmk
       - checkout
       - run: make
   nix-shell:
