@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: "ubuntu:18.04"
     steps:
-      - run: apt update -qq && apt install -y make dvipsmk git texlive-lang-japanese
+      - run: apt update -qq && apt install -y make dvips git texlive-lang-japanese
       - checkout
       - run: make
   nix-shell:
